@@ -16,7 +16,7 @@
         }
 
         .max-container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
         }
     </style>
@@ -31,6 +31,25 @@
                 <span class="flex-none text-2xl font-bold text-blue-600 dark:text-blue-500">QuickNote <span
                         class="text-gray-400 dark:text-neutral-500 font-normal text-sm ml-2">Fullscreen
                         Mode</span></span>
+            </div>
+            <div class="flex items-center gap-x-2">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700"
+                    title="Chuyển chế độ sáng/tối">
+                    <svg class="sun-icon shrink-0 size-4 hidden dark:block" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4" />
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                    </svg>
+                    <svg class="moon-icon shrink-0 size-4 block dark:hidden" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
@@ -64,10 +83,40 @@
                 </div>
             </div>
 
-            <hr class="border-gray-200">
+            <!-- Folders Tabs -->
+            <div>
+                <div class="flex items-center justify-between mb-3">
+                    <label class="text-sm font-semibold text-gray-800 uppercase dark:text-neutral-200">
+                        Quản lý Thư mục
+                    </label>
+                    <button type="button" id="add-folder-btn"
+                        class="py-1.5 px-3 inline-flex items-center gap-x-1.5 text-xs font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700"
+                        title="Thêm thư mục mới">
+                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="M12 5v14" />
+                        </svg>
+                        Thư mục mới
+                    </button>
+                </div>
+
+                <div class="flex pb-2 overflow-x-auto snap-x snap-mandatory hide-scroll gap-x-2" id="folders-container">
+                    <!-- Thư mục "Tất cả" mặc định -->
+                    <button type="button"
+                        class="folder-tab active snap-start shrink-0 py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-blue-600 bg-blue-600 text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:bg-blue-700"
+                        data-id="all">
+                        Tất cả
+                    </button>
+                    <!-- Render thư mục khác ở đây -->
+                </div>
+            </div>
+
+            <hr class="border-gray-200 dark:border-neutral-800">
 
             <!-- Notes Grid -->
-            <div id="notes-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div id="notes-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
                 <!-- Ghi chú sẽ được render ở đây -->
             </div>
         </div>
