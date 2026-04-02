@@ -48,7 +48,7 @@ NoteExtention/
 
 1. **Tải xuống hoặc Clone dự án này:**
    ```bash
-   git clone https://github.com/your-username/NoteExtention.git
+   git clone https://github.com/nghiaomg/ChromeExtention-QuickNote.git
    ```
 2. **Truy cập quản lý tiện ích của Chrome:**
    - Mở trình duyệt Chrome.
